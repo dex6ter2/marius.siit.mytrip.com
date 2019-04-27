@@ -1,0 +1,76 @@
+
+/* Header*/
+body{
+  margin: 0;
+}
+.HeaderMainDiv{
+width: 100%;
+background-color: #243238;
+display: inline-block;
+}
+
+.TripsDiv{
+  height: inherit;
+  float: left;
+  background-color: inherit;
+}
+
+p {
+  font-family: "PT Sans",sans-serif;
+  color: grey;
+  margin-left: 20px;
+}
+
+.LoginDiv{
+  height: inherit;
+  float: right;
+  background-color: inherit;
+  display: block;
+  padding-right: 4%;
+  margin-left: 3%;
+}
+
+.ProfileDiv{
+  height: inherit;
+  float: right;
+  background-color: inherit;
+  display: block;
+  }
+
+table {
+  width: 80%;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+button{
+  width: 20%;
+  margin-top: 2%;
+  height: 35px;
+  border-radius: 5px;
+}
+
+#LogIn{
+
+  margin-right: 5%;
+  color: white;
+  background-color: #bf3939;
+}
+
+#SignUp{
+  margin-left: 5%;
+  color: white;
+  background-color: #186487;
+}
+
+input{
+  width: 50%;
+}
+
+label{
+  color: grey;
+}
+
+#LogInText{
+  color: white;
+}
