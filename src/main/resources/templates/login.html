@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{Layout/MainDesign}">
 <head>
-    <!--<meta charset="UTF-8">-->
-    <!--<title>MyTrip</title>-->
-    <!--<link rel="stylesheet" href="login.css" type="text/css" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <div layout:fragment="content">
-
+    <div class="container w-50 p-3 ">
+        <form class="form-signin text-center ">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <label for="Username" class="sr-only">Username</label>
+            <input type="text" id="Username" class="form-control" placeholder="Username" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div class="checkbox mb-3">
+                <!--<label>-->
+                <!--<input type="checkbox" value="remember-me"> Remember me-->
+                <!--</label>-->
+            </div>
+            <div class="d-flex justify-content-center">
+                <table>
+                    <tr>
+                        <td>
+                            <button class="btn btn-lg btn-danger " type="submit">Sign in</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-lg btn-primary " type="submit">Sign Up</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
 </div>
-  <!--<header>-->
-    <!--<div class="HeaderMainDiv">-->
-      <!--<div class="TripsDiv">-->
-        <!--<p>Trips</p>-->
-      <!--</div>-->
-      <!--<div class="LoginDiv">-->
-        <!--<p id="LogInText">Log in</p>-->
-      <!--</div>-->
-      <!--<div class="ProfileDiv">-->
-        <!--<p>Profile</p>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</header>-->
-  <!--<table class="UserAndPassTable">-->
-    <!--<tr>-->
-      <!--<td><label for="Username"> Username</label></td>-->
-      <!--<td><input type="text" name="Username" id="Username" value=""></td>-->
-    <!--</tr>-->
-    <!--<tr>-->
-      <!--<td><label for="Password"> Password</label></td>-->
-      <!--<td><input type="password"  name="Password" id="Password" value=""></td>-->
-    <!--</tr>-->
-    <!--<tr>-->
-      <!--<td></td>-->
-      <!--<td>-->
-      <!--<button type="button" name="LogIn" id="LogIn">Log in</button>-->
-      <!--<button type="button" name="SignUp" id="SignUp">Sign Up</button>-->
-    <!--</td>-->
-    <!--</tr>-->
-  <!--</table>-->
+
 </body>
 </html>
