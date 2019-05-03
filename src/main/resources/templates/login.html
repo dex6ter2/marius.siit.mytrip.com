@@ -4,16 +4,20 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login</title>
 </head>
 <body>
 <div layout:fragment="content">
     <div class="container w-50 p-3 ">
-        <form class="form-signin text-center ">
+        <div class="alert alert-danger" role="alert" th:if="${param.error}">
+            Username or password incorrect!
+        </div>
+        <form class="form-signin text-center" th:action="@{/login}" method ="POST">
             <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
             <label for="Username" class="sr-only">Username</label>
-            <input type="text" id="Username" class="form-control" placeholder="Username" required autofocus>
+            <input type="text" id="Username" class="form-control" name="userName" placeholder="Username" required autofocus>
             <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required autofocus>
             <div class="checkbox mb-3">
                 <!--<label>-->
                 <!--<input type="checkbox" value="remember-me"> Remember me-->
@@ -26,7 +30,7 @@
                             <button class="btn btn-lg btn-danger " type="submit">Sign in</button>
                         </td>
                         <td>
-                            <a  class="btn btn-lg btn-primary"  th:href="@{/registration}"> Sign Up </a>
+                            <a  class="btn btn-lg btn-primary"  th:href="@{/register}"> Sign Up </a>
                             <!--<form action="~{/register}" method="get">-->
                             <!--<input class="btn btn-lg btn-primary " type="submit" value="Sign Up"-->
                                    <!--name="SignUp" />-->
