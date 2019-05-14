@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{Layout/MainDesign}"
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{Layout/HomeDesign}"
       xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -8,7 +8,6 @@
 </head>
 <body layout:fragment="content">
 <span th:utext="${userName}"></span>
-<a th:href="@{/Logout}">sign out</a>
 
 </body>
 </html>
