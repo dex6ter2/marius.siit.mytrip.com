@@ -8,15 +8,20 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import project.marius.siit.mytrip.MyTrip.Model.Trip;
 import project.marius.siit.mytrip.MyTrip.Model.User;
+import project.marius.siit.mytrip.MyTrip.Service.TripService;
 import project.marius.siit.mytrip.MyTrip.Service.UserService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private TripService tripService;
 
     @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
     public ModelAndView login() {
@@ -57,7 +62,9 @@ public class UserController {
         ModelAndView model = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByUserName(auth.getName());
+        List<Trip> trip = tripService.findTripsByUserId(user);
         model.addObject("userName", user.getUserName());
+        model.addObject("trip",trip);
         model.setViewName("home/home");
         return model;
     }
