@@ -10,6 +10,7 @@
 <!--<span th:utext="${userName}"></span>-->
 <form class="needs-validation" role="form" method="post" enctype="multipart/form-data"
       th:action="@{/home/trip/add_trip}" >
+
     <div class="row">
         <div class="col-md-6 mb-3">
             <label for="tripname">Trip Name</label>
@@ -17,6 +18,17 @@
                    required>
             <div class="invalid-feedback">
                 Valid trip name is required.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="impressions">Impressions</label>
+            <input type="text" class="form-control" id="impressions" placeholder="" value="" name="impressions"
+                   required>
+            <div class="invalid-feedback">
+                Trip impressions are required.
             </div>
         </div>
     </div>
@@ -29,6 +41,41 @@
             Valid picture is required.
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="shortDescription">Photo Description</label>
+            <input type="text" class="form-control" id="shortDescription" placeholder="" value="" name="pictureDetails"
+                   required>
+            <div class="invalid-feedback">
+                Photo Description is required.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="startDate">Date From</label>
+            <input type="date" class="form-control" id="startDate" placeholder="" value="" name="startDate"
+                   required>
+            <div class="invalid-feedback">
+                Date From is required
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="endDate">Date To</label>
+            <input type="date" class="form-control" id="endDate" placeholder="" value="" name="endDate"
+                   required>
+            <div class="invalid-feedback">
+                Date To is required.
+            </div>
+        </div>
+    </div>
+
 
     <!--<div class="mb-3">-->
     <!--<label for="username">Username</label>-->
@@ -82,17 +129,5 @@
     <!--</div>-->
     <button class="btn btn-primary btn-lg btn-block" type="submit">Add Trip</button>
 </form>
-
-<!--<form enctype="multipart/form-data" method="post" th:action="/home/trip/add_trip">-->
-    <!--<div class="col-md-6 mb-3">-->
-        <!--<label for="photo">Photo String</label>-->
-        <!--<input type="file" class="form-control" id="photo" placeholder="" value="" th:field="*{picture}"-->
-               <!--required>-->
-        <!--<input type="submit" value="upload">-->
-        <!--<div class="invalid-feedback">-->
-            <!--Valid picture is required.-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</form>-->
 </body>
 </html>

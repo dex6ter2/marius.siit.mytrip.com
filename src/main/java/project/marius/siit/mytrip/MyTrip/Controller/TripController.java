@@ -47,6 +47,11 @@ public class TripController {
         Trip trip = new Trip();
         trip.setUser(user);
         trip.setTripName(tripWrapper.getTitle());
+        trip.setPicture("/temp/"+ user.getId() + trip.getTripName()+ ".jpg");
+        trip.setEndDate(tripWrapper.getEndDate());
+        trip.setStartDate(tripWrapper.getStartDate());
+        trip.setPictureDetails(tripWrapper.getPictureDetails());
+        trip.setImpressions(tripWrapper.getImpressions());
         storageService.store(tripWrapper.getPicture(),user,trip);
         tripService.saveTrip(trip);
         return new ModelAndView("redirect:http://localhost:8080/home");

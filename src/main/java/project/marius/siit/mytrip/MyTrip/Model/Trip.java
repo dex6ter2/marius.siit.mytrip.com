@@ -11,9 +11,50 @@ public class Trip {
     @Column(name = "tripname")
     private String tripName;
 
-    @Column(name = "picture1")
+    @Column(name = "picture")
     private String picture;
-//TODO add all the params!!!
+    @Column(name="picture_details")
+    private String pictureDetails;
+    @Column(name="start_date")
+    private String startDate;
+    @Column(name="end_date")
+    private String endDate;
+    @Column(name="impressions")
+    private String impressions;
+
+    public String getPictureDetails() {
+        return pictureDetails;
+    }
+
+    public void setPictureDetails(String pictureDetails) {
+        this.pictureDetails = pictureDetails;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getImpressions() {
+        return impressions;
+    }
+
+    public void setImpressions(String impressions) {
+        this.impressions = impressions;
+    }
+
+    //TODO add all the params!!!
     public String getPicture() {
         return picture;
     }
