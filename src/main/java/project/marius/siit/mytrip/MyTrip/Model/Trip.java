@@ -2,6 +2,7 @@ package project.marius.siit.mytrip.MyTrip.Model;
 
 
 import org.hibernate.annotations.Generated;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 
@@ -13,8 +14,17 @@ public class Trip {
     private int tripId;
     @Column(name = "tripname")
     private String tripName;
-    @Column(name = "picture")
+
+    @Column(name = "picture1")
     private String picture;
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -34,14 +44,6 @@ public class Trip {
 
     public void setTripName(String tripName) {
         this.tripName = tripName;
-    }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
     }
 
     public User getUser() {

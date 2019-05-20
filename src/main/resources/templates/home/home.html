@@ -16,8 +16,9 @@
         My trips
     </a>
 
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" th:each="trip:${trip}">
-        <a class="dropdown-item" href="#" th:text = "${trip.tripName}"></a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
+        <a class="dropdown-item" th:each="trip : ${trip}"  th:href="@{/home/trip/trip(id=${trip.tripId})}" > <p th:text = "${trip.tripName}"></p></a>
+
     </div>
 </div>
 </body>

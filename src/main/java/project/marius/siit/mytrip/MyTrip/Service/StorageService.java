@@ -4,11 +4,9 @@ import org.springframework.web.multipart.MultipartFile;
 import project.marius.siit.mytrip.MyTrip.Model.Trip;
 import project.marius.siit.mytrip.MyTrip.Model.User;
 
-import java.util.List;
-import java.util.Optional;
+import java.nio.file.Path;
 
-public interface TripService {
-    List<Trip> findTripsByUserId(User user);
-    public void saveTrip (Trip trip);
-    Trip findTripById(Integer id);
-       }
+public interface StorageService {
+    void createDirectory();
+    public void store(MultipartFile file, User user, Trip trip);
+}

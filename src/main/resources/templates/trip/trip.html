@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{Layout/HomeDesign}"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>trip</title>
+</head>
+<body layout:fragment="content">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+            <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}"></div>
+            <h4 class="mb-3">Trip</h4>
+            <form role="form" method="get" th:object="${trip}">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="tripname">First name</label>
+                        <input type="text" class="form-control" id="tripname" placeholder="" value=""
+                              th:field="${trip.tripName}" readonly>
+
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="picture1">Picture</label>
+                        <input type="image" id="picture1" placeholder="" value=""
+                               th:field="${trip.picture}" readonly>
+
+                        <div class="invalid-feedback">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<img th:src="@{/temp/13Roma7.jpg}" alt="picture"  height="1000" width="1000">
+</body>
+</html>
