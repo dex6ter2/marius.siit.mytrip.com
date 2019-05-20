@@ -9,31 +9,30 @@
 <body layout:fragment="content">
 <div class="container">
     <div class="row">
-        <div class="col-md-8 order-md-1">
+
             <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}"></div>
-            <h4 class="mb-3">Trip</h4>
+
             <form role="form" method="get" th:object="${trip}">
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="tripname">First name</label>
-                        <input type="text" class="form-control" id="tripname" placeholder="" value=""
-                              th:field="${trip.tripName}" readonly>
+                <div>
 
+                    <label for="tripname">Trip:</label>
+                    <input type="text" class="form-control" id="tripname" placeholder="" value=""
+                           th:field="${trip.tripName}" readonly>
+                </div>
+                <div>
+                    <label for="impressions">Impressions: </label>
+                    <br>
+                    <input type="text" id="impressions" class="form-control"
+                           th:field="${trip.impressions}" readonly>
+                    <div class="invalid-feedback">
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="picture1">Picture</label>
-                        <input type="image" id="picture1" placeholder="" value=""
-                               th:field="${trip.picture}" readonly>
 
-                        <div class="invalid-feedback">
-                        </div>
-                    </div>
                 </div>
 
             </form>
-        </div>
+
     </div>
 </div>
-<img th:src="${trip.picture}" alt="picture"  height="1000" width="1000" >
+<img th:src="${trip.picture}" alt="picture" height="300" width="300">
 </body>
 </html>
