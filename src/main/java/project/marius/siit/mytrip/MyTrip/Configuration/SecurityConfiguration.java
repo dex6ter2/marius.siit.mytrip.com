@@ -44,7 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/home/**").fullyAuthenticated().anyRequest()
                 .authenticated().and().csrf().disable()
                 .formLogin().loginPage("/login").failureUrl("/login?error=true")
-                .defaultSuccessUrl("/home/home")
+                .defaultSuccessUrl("/home")
                 .usernameParameter("username")
                 .usernameParameter("password")
                 .and().logout()
@@ -56,10 +56,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and().exceptionHandling().accessDeniedPage("/access_denied");
     }
 
-    @Bean
-    public PersistentTokenRepository persistentTokenRepository() {
-        JdbcTokenRepositoryImpl db = new JdbcTokenRepositoryImpl();
-        db.setDataSource(dataSource);
-        return db;
-    }
+//TODO not in a rush but is easy to implement, need to write HTML line code
+
+//    @Bean
+//    public PersistentTokenRepository persistentTokenRepository() {
+//        JdbcTokenRepositoryImpl db = new JdbcTokenRepositoryImpl();
+//        db.setDataSource(dataSource);
+//        return db;
+//    }
 }

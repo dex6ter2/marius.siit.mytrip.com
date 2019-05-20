@@ -8,15 +8,20 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import project.marius.siit.mytrip.MyTrip.Model.Trip;
 import project.marius.siit.mytrip.MyTrip.Model.User;
+import project.marius.siit.mytrip.MyTrip.Service.TripService;
 import project.marius.siit.mytrip.MyTrip.Service.UserService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private TripService tripService;
 
     @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
     public ModelAndView login() {
@@ -52,12 +57,14 @@ public class UserController {
         return model;
     }
 
-    @RequestMapping(value = {"/home/home"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/home"}, method = RequestMethod.GET)
     public ModelAndView home() {
         ModelAndView model = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByUserName(auth.getName());
-        model.addObject("username", user.getUserName());
+        List<Trip> trip = tripService.findTripsByUserId(user);
+        model.addObject("userName", user.getUserName());
+        model.addObject("trip",trip);
         model.setViewName("home/home");
         return model;
     }
@@ -68,5 +75,45 @@ public class UserController {
         model.setViewName("error/access_denied");
         return model;
     }
+
+    @RequestMapping(value = {"/logout"}, method = RequestMethod.GET)
+    public ModelAndView logout() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("login");
+        return model;
+    }
+
+    @RequestMapping(value = {"/home/profile"}, method = RequestMethod.GET)
+    public ModelAndView showProfile() {
+        ModelAndView model = new ModelAndView();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByUserName(auth.getName());
+        model.addObject("user", user);
+        model.setViewName("home/profile");
+        return model;
+    }
+
+    @RequestMapping(value = {"/home/profile_edit"}, method = RequestMethod.GET)
+    public ModelAndView editProfile() {
+        ModelAndView model = new ModelAndView();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByUserName(auth.getName());
+        model.addObject("user", user);
+        model.setViewName("home/profile_edit");
+        return model;
+    }
+
+    @RequestMapping(value = {"/home/profile_edit"}, method = RequestMethod.POST)
+    public ModelAndView updateProfile(User user) {
+        ModelAndView model = new ModelAndView();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user2 = userService.findUserByUserName(auth.getName());
+        user.setId(user2.getId());
+        userService.saveUser(user);
+        model.addObject("user", user);
+        model.setViewName("home/home");
+        return model;
+    }
+
 
 }

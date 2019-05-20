@@ -25,4 +25,5 @@ public class UserServiceImpl implements UserService {
         user.setActive(1);
         userRepository.save(user);
     }
+
 }

@@ -12,5 +12,5 @@ public class MyTripApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
+//TODO find test for Spring Boot and... do some testing!
 }
