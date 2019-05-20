@@ -1,9 +1,5 @@
 package project.marius.siit.mytrip.MyTrip.Model;
 
-
-import org.hibernate.annotations.Generated;
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +13,7 @@ public class Trip {
 
     @Column(name = "picture1")
     private String picture;
-
+//TODO add all the params!!!
     public String getPicture() {
         return picture;
     }

@@ -18,7 +18,7 @@ public class MyTripApplication {
 		SpringApplication.run(MyTripApplication.class, args);
 	}
 
-
+//TODO find a way for the program to create the needed DB for you!!!
 
 	@Bean
 	CommandLineRunner init(StorageService storageService) {

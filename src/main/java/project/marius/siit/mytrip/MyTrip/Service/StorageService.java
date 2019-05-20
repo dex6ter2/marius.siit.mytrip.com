@@ -4,8 +4,6 @@ import org.springframework.web.multipart.MultipartFile;
 import project.marius.siit.mytrip.MyTrip.Model.Trip;
 import project.marius.siit.mytrip.MyTrip.Model.User;
 
-import java.nio.file.Path;
-
 public interface StorageService {
     void createDirectory();
     public void store(MultipartFile file, User user, Trip trip);

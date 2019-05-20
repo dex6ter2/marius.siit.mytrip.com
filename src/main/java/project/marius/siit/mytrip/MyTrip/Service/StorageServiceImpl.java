@@ -7,7 +7,6 @@ import project.marius.siit.mytrip.MyTrip.Model.StorageDirectory;
 import project.marius.siit.mytrip.MyTrip.Model.StorageException;
 import project.marius.siit.mytrip.MyTrip.Model.Trip;
 import project.marius.siit.mytrip.MyTrip.Model.User;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;

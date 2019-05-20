@@ -1,33 +1,21 @@
 package project.marius.siit.mytrip.MyTrip.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-import project.marius.siit.mytrip.MyTrip.Model.StorageDirectory;
 import project.marius.siit.mytrip.MyTrip.Model.Trip;
 import project.marius.siit.mytrip.MyTrip.Model.TripWrapper;
 import project.marius.siit.mytrip.MyTrip.Model.User;
 import project.marius.siit.mytrip.MyTrip.Service.StorageService;
-import project.marius.siit.mytrip.MyTrip.Service.StorageServiceImpl;
 import project.marius.siit.mytrip.MyTrip.Service.TripService;
 import project.marius.siit.mytrip.MyTrip.Service.UserService;
-
 import javax.validation.Valid;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Optional;
+
 
 @Controller
 @RequestMapping("home/trip")
