@@ -10,28 +10,41 @@
 <div class="container">
     <div class="row">
 
-            <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}"></div>
+        <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}"></div>
 
-            <form role="form" method="get" th:object="${trip}">
-                <div>
+        <form role="form" method="get" th:object="${trip}">
+            <div>
 
-                    <label for="tripname">Trip:</label>
-                    <input type="text" class="form-control" id="tripname" placeholder="" value=""
-                           th:field="${trip.tripName}" readonly>
+                <label for="tripname">Trip:</label>
+                <input type="text" class="form-control" id="tripname" placeholder="" value=""
+                       th:field="${trip.tripName}" readonly>
+            </div>
+            <div>
+                <label for="impressions">Impressions: </label>
+                <br>
+                <input type="text" id="impressions" class="form-control"
+                       th:field="${trip.impressions}" readonly>
+                <div class="invalid-feedback">
                 </div>
-                <div>
-                    <label for="impressions">Impressions: </label>
-                    <br>
-                    <input type="text" id="impressions" class="form-control"
-                           th:field="${trip.impressions}" readonly>
-                    <div class="invalid-feedback">
+            </div>
+            <div class="dropdown show mt-2 ">
+                <div class="border">
+                    <img class="mt-2" th:src="${trip.picture}" alt="picture" height="300" width="300">
+                    <p th:utext="${trip.pictureDetails}">
+                    </p>
+                </div >
+                <div class="justify-content-end mt-2 border">
+                    <div class="p-2">
+                        <p>Dates</p>
+                        <p th:utext="${trip.startDate}+ ' - ' +${trip.endDate}"></p>
                     </div>
                 </div>
+            </div>
 
-            </form>
+        </form>
 
     </div>
 </div>
-<img th:src="${trip.picture}" alt="picture" height="300" width="300">
+
 </body>
 </html>
