@@ -14,7 +14,7 @@ public class User {
 
     @Column (name="lastname")
     private String lastName;
-@Size(min=1)
+
     @Column (name="username")
     private String userName;
 
@@ -23,7 +23,7 @@ public class User {
 
     @Column (name="city")
     private String city;
-@Size(min=10)
+
     @Column (name="phone")
     private String phone;
 
